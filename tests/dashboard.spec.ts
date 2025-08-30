@@ -48,7 +48,7 @@ test.describe('Dashboard tests', () => {
     await expect(page.getByTestId('error-widget-1-transfer-receiver')).toHaveText('pole wymagane');
   });
 
-  test('Simple transfer UNSUCCESSFUL - ammount missing', async ({ page }) => {
+  test('Simple transfer UNSUCCESSFUL - amount missing', async ({ page }) => {
     // login
     await page.goto('https://demo-bank.vercel.app/');
     await page.getByTestId('login-input').fill('dsadasda');
