@@ -34,27 +34,3 @@ if link is broken check https://jaktestowac.pl/lesson/pw1s01l01/
     // },
     ```
 
-
-## Skróty/tips
-- npm - node package manager
-- npx - node package executor
-
-odnośnie readme.md:
-- "#' - nagłówek (ilość hashy zmienia się zagnieżdżenie nagłówków czyli np 1hash duży nagłówek, 2hash mniejszy itp itd)
-- '-' myślnik - lista
-- ` backtick - otoczenie tekstu - ``` oznaczenie w wielu liniach
-- dwie spacje - łamanie linii
-
-<u>getByTestId</u><b>('login-input')</b><br>
-<u>Jak</u> odnajdujemy element | <b>Adres</b> elementu<br>
-<u>lokator</u> - metoda w jaki sposób łapiemy element (np. getByTestId)<br>
-<b>selektor</b> - adres elementu (np. 'login-input')
-
-
-## opis co robi
-
-- test.describe('jakas nazwa', () => { - łączy test w grupy 
-- .blur - odfocusowuje jakis element na stronie np. textfield
-- test.only - wykonuje tylko testy z tym dopiskiem
-
-- w devtools - RMB na elemencie, copy css selector, w konsoli devtools mozna sprawdzic locator
