@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('User login', () => {
-
   test('SUCCESSFUL login with correct credentials', async ({ page }) => {
     // Consts arrangement
     const url = 'https://demo-bank.vercel.app/';
@@ -20,26 +19,32 @@ test.describe('User login', () => {
     await expect(page.getByTestId('user-name')).toHaveText(expectedUserName);
   });
 
-  test('UNSUCCESSFUL login with incorrect credentials - incorrect username(less than 8 chars)', async ({ page }) => {
-     // Consts arrangement
+  test('UNSUCCESSFUL login with incorrect credentials - incorrect username(less than 8 chars)', async ({
+    page,
+  }) => {
+    // Consts arrangement
     const url = 'https://demo-bank.vercel.app/';
-    const expectedMessage = 'identyfikator ma min. 8 znaków'
-    
+    const expectedMessage = 'identyfikator ma min. 8 znaków';
+
     // Actions
     await page.goto(url);
     await page.getByTestId('login-input').fill('user');
     await page.getByTestId('password-input').click();
 
     // Assserts
-    await expect(page.getByTestId('error-login-id')).toHaveText(expectedMessage);
+    await expect(page.getByTestId('error-login-id')).toHaveText(
+      expectedMessage,
+    );
   });
 
-  test('UNSUCCESSFUL login with incorrect credentials - incorrect password(less than 8 chars)', async ({ page }) => {
+  test('UNSUCCESSFUL login with incorrect credentials - incorrect password(less than 8 chars)', async ({
+    page,
+  }) => {
     // Consts arrangement
     const url = 'https://demo-bank.vercel.app/';
     const userName = 'usertest';
-    const expectedMessage = 'hasło ma min. 8 znaków'
-    
+    const expectedMessage = 'hasło ma min. 8 znaków';
+
     // Actions
     await page.goto(url);
     await page.getByTestId('login-input').fill(userName);
@@ -47,7 +52,8 @@ test.describe('User login', () => {
     await page.getByTestId('password-input').blur();
 
     // Assserts
-    await expect(page.getByTestId('error-login-password')).toHaveText(expectedMessage);
+    await expect(page.getByTestId('error-login-password')).toHaveText(
+      expectedMessage,
+    );
   });
-
 });
