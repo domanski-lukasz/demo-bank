@@ -3,7 +3,7 @@ import test, { expect } from '@playwright/test';
 test.describe('Dashboard tests', () => {
   // SIMPLE TRANSFER
 
-  test('Simple transfer SUCCESSFUL - correct data', async ({ page }) => {
+  test.only('Simple transfer SUCCESSFUL - correct data', async ({ page }) => {
     // Consts arrangement
     const url = 'https://demo-bank.vercel.app/';
     const userName = 'usertest';
