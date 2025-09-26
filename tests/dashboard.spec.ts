@@ -1,13 +1,11 @@
 import test, { expect } from '@playwright/test';
 
 test.describe('Dashboard tests', () => {
-  
   test.beforeEach(async ({ page }) => {
-    const url = 'https://demo-bank.vercel.app/';
     const userName = 'usertest';
     const userPassword = 'testpass';
     
-    await page.goto(url);
+    await page.goto('/')
     await page.getByTestId('login-input').fill(userName);
     await page.getByTestId('password-input').fill(userPassword);
     await page.getByTestId('login-button').click();
